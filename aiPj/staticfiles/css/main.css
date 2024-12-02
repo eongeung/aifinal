@@ -1,0 +1,100 @@
+.main * {
+    margin: 0;
+    padding: 0;
+}
+.main {
+    margin-bottom: 400px;
+}
+.icon{
+    width: 50px;
+    position: absolute;
+    right: 400px;
+    top: 10px;
+}
+.icon img {
+    width: 100%;
+}
+.w100{
+    position: relative;
+    top: 100px;
+}
+.img_box {
+    display: flex;
+    justify-content: center;
+}
+.img_box img{
+    width: 100px;
+}
+
+.main .text {
+    text-align: center;
+}
+.main .text h2 {
+    font-size: 50px;
+}
+.main .text p {
+    font-weight: bold;
+}
+
+.main .text input {
+    background-color: antiquewhite;
+    width: 500px;
+    height: 100px;
+    border-radius: 10px;
+    padding-top: 73px;
+    padding-left: 20px;
+}
+
+.main .text button {
+    text-decoration-line : none;
+    text-decoration : none;
+    color: black;
+    border: 1px solid #000;
+    padding: 20px 150px;
+    font-weight: bold;
+    position: relative;
+    background-color: #fff;
+}
+
+
+/* 모달 */
+
+.box {
+    border: 1px solid #000;
+    width: 500px;
+    height: 250px;
+    position: relative;
+    left: 50px;
+    overflow-y: scroll; 
+}
+
+
+/* info.html */
+.info {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+.info .info_text {
+    font-size: 20px;
+    margin-bottom: 100px;
+}
+.info .info_text h3 {
+    text-align: center;
+    font-size: 50px;
+}
+.info .info_text p {
+    text-align: left;
+}
+.info .info_text span {
+    font-weight: bold;
+    font-size: 25px;
+}
+.info a {
+    text-decoration-line : none;
+    text-decoration : none;
+    color: black;
+    border: 1px solid #000;
+    padding: 20px 150px;
+    font-weight: bold;
+}

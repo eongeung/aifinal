@@ -1,0 +1,114 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>7가지 플라스틱 구분</title>
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+    <style>
+        #modal {
+            display: none;
+            position: fixed;
+            top: 5%;
+            right: 0%;
+            width: 600px;
+            height: 90%;
+            background-color: #fff;
+            border: 1px solid #000;
+            list-style: none;
+        }
+        #modal img {
+            max-width: 50%;
+            max-height: 50%;
+        }
+        #modal button {
+            top: 50px;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="icon">
+            <!-- URL 링크 수정 -->
+            <a href="{% url 'info' %}">
+                <img src="{% static 'image/info.png' %}" alt="info" title="info">
+            </a>
+        </div>
+        <div class="w100">
+            <div class="img_box">
+                <img src="{% static 'image/logo.png' %}" alt="logo" title="logo">
+            </div>
+            <div class="text">
+                <br><br><br>
+                <h2>지구를 지켜라!</h2>
+                <br><br>
+                <p>내가 쓰는 플라스틱은 종류가 뭘까?</p>
+                <br><br>
+                <video id="video" width="640" height="480" autoplay playsinline></video><br>
+                <button id="captureButton" style="top: 100px;">알고싶어요!</button>
+
+                <!-- 모달 -->
+                <div id="modal">
+                    <br>
+                    <img id="capturedImage" alt="Captured Image"><br><br><br>
+                    <div class="modal_title">
+                        <h1>이 이미지에 있는 제품은 <span>PET</span> 입니다.</h1>
+                        <br><br>
+                    </div>
+                    <div class="box">
+                        <h3>이 플라스틱은 뭔가요?</h3><br>
+                        <p>
+                            <span>1. PET (Polyethylene Terephthalate, 폴리에틸렌 테레프탈레이트) </span><br>
+                            용도: 주로 음료수 병, 식품 용기, 섬유(폴리에스터) 등으로 사용. <br>
+                            특성: 투명하고 가볍지만 강도가 높아 음식물과 음료를 안전하게 보관하는 용도로 많이 쓰입니다. 재활용이 가능하며, 재활용 후에도  <br>품질이 우수합니다.
+                            재활용 번호: 1 <br>
+                            재활용 가능성: 높음 (재활용 후 섬유, 카펫, 포장재로 재사용). <br><br>
+                        </p>
+                        <h3>어떻게 처리하죠?</h3>
+                        <p>
+                            다음과 같이 차례로 처리하고 버려주세요. <br>
+                            1. 부착된 라벨과 내부의 이물질을 깨끗이 닦고 구겨서 PET 쓰레기 분류함에 버려 주세요. <br>
+                           2. 특수한 휴대폰 케이스 등의 플라스틱 제품은 색이 있다면 Other 플라스틱으로 분류되니 유의해 주세요.
+                        </p>
+                    </div>
+                    <button onclick="closeModal()">닫기</button>
+                </div>
+
+                <canvas id="canvas" style="display:none;"></canvas>
+                <script>
+                    const video = document.getElementById('video');
+                    const canvas = document.getElementById('canvas');
+                    const modal = document.getElementById('modal');
+                    const capturedImage = document.getElementById('capturedImage');
+            
+                    // 카메라 시작
+                    navigator.mediaDevices.getUserMedia({ video: true })
+                        .then(stream => {
+                            video.srcObject = stream;
+                        })
+                        .catch(error => {
+                            console.error("카메라 접근 오류:", error);
+                        });
+            
+                    // 사진 촬영
+                    document.getElementById('captureButton').addEventListener('click', () => {
+                        canvas.width = video.videoWidth;
+                        canvas.height = video.videoHeight;
+                        canvas.getContext('2d').drawImage(video, 0, 0);
+            
+                        // 모달에 이미지 표시
+                        capturedImage.src = canvas.toDataURL('image/png');
+                        modal.style.display = 'list-item';
+                    });
+            
+                    // 모달 닫기 함수
+                    function closeModal() {
+                        modal.style.display = 'none';
+                    }
+                </script>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

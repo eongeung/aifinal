@@ -1,0 +1,71 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>7가지 플라스틱 구별</title>
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+</head>
+<body>
+    <div class="w100">
+        <div class="img_box">
+            <a href="{% url 'index' %}"><img src="{% static 'image/logo.png' %}" alt="logo" title="logo"></a>
+        </div>
+        <br><br>
+        <div class="info">
+            <div class="info_text">
+                <h3>7가지 플라스틱 구별하는 법</h3><br><br>
+                <p>
+                    <span>1. PET (Polyethylene Terephthalate, 폴리에틸렌 테레프탈레이트) </span><br>
+                    용도: 주로 음료수 병, 식품 용기, 섬유(폴리에스터) 등으로 사용. <br>
+                    특성: 투명하고 가볍지만 강도가 높아 음식물과 음료를 안전하게 보관하는 용도로 많이 쓰입니다. 재활용이 가능하며, 재활용 후에도  <br>품질이 우수합니다.
+                    재활용 번호: 1 <br>
+                    재활용 가능성: 높음 (재활용 후 섬유, 카펫, 포장재로 재사용). <br><br>
+                    <span>2. HDPE (High-Density Polyethylene, 고밀도 폴리에틸렌) <br></span>
+                    용도: 우유통, 세제 병, 비닐봉지, 파이프 등. <br>
+                    특성: 단단하고 내구성이 뛰어나며, 화학 물질에 강합니다. 가볍고 저렴하면서도 많은 일상 제품에 사용됩니다. <br>
+                    재활용 번호: 2 <br>
+                    재활용 가능성: 높음 (재활용 후 파이프, 플라스틱 가구, 쓰레기통 등으로 사용).<br><br>
+                    <span>3. PVC (Polyvinyl Chloride, 폴리염화비닐) <br></span>
+                    
+                    용도: 배관, 창틀, 카드, 의료 기구, 전선 피복 등. <br>
+                    특성: 단단하면서도 유연성이 있으며, 물과 화학 물질에 매우 강합니다. 하지만 재활용이 어렵고, 분해 과정에서 유해물질을 배출할 수 있습니다.<br>
+                    재활용 번호: 3 <br>
+                    재활용 가능성: 낮음 (주로 건설 자재로 사용). <br><br>
+                    <span>4. LDPE (Low-Density Polyethylene, 저밀도 폴리에틸렌) <br></span>
+                    용도: 비닐봉지, 랩, 일부 병, 포장재 등. <br>
+                    특성: 매우 유연하고 가벼우며, 내구성이 강합니다. 투명하고 물에 강해 식품 포장에 주로 사용되지만, 재활용이 어렵습니다.<br>
+                    재활용 번호: 4 <br>
+                    재활용 가능성: 중간 (재활용 후 쓰레기봉투, 건축 자재로 사용). <br><br>
+                    <span>5. PP (Polypropylene, 폴리프로필렌) <br></span>
+                    용도: 식품 용기, 빨대, 주사기, 자동차 부품, 전자기기 부품 등. <br>
+                    특성: 강하면서도 유연성이 있고, 열에 강합니다. 식품 용기나 의료  <br>기구처럼 고온 소독이 필요한 제품에 자주 사용됩니다.
+                    재활용 번호: 5 <br>
+                    재활용 가능성: 중간 (재활용 후 자동차 부품, 배관 등으로 사용). <br><br>
+                    <span>6. PS (Polystyrene, 폴리스타이렌) <br></span>
+                    용도: 일회용 컵, 접시, 식품 용기, 전자기기 포장재 등. <br>
+                    특성: 가볍고 단열성이 뛰어나지만, 내구성이 떨어집니다. 주로 발포된 형태로 포장재나 일회용품에 많이 사용됩니다. <br>
+                    재활용 번호: 6 <br>
+                    재활용 가능성: 낮음 (재활용이 어렵고 환경에 유해함). <br><br>
+                    <span>7. 기타 (Other) <br></span>
+                    용도: 폴리카보네이트(PC), 나일론, 아크릴 등 특수 목적 플라스틱으로 전자기기, 자동차 부품, 물병, CD/DVD 등에서 사용. <br>
+                    특성: 이 범주에는 PET, HDPE, PVC, LDPE, PP, PS에 해당하지 않는 여러 플라스틱이 포함됩니다. 내구성이나 투명성 등 목적에  <br>맞춰 다양한 용도로 사용됩니다.
+                    재활용 번호: 7 <br>
+                    재활용 가능성: 다양함 (플라스틱 종류에 따라 재활용 가능성 다름). <br><br>
+                    <span>요약 <br></span>
+                    PET: 음료수 병, 재활용 용이. <br>
+                    HDPE: 우유통, 화학물질에 강함. <br>
+                    PVC: 배관, 재활용 어려움. <br>
+                    LDPE: 비닐봉지, 재활용 중간. <br>
+                    PP: 식품 용기, 열에 강함. <br>
+                    PS: 일회용품, 재활용 어려움. <br>
+                    기타: 특수 플라스틱, 용도 및 재활용 가능성 다양. <br>
+                </p>
+                <br><br><br><br><br><br>
+                <a href="{% url 'index' %}">홈으로 돌아가기</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
